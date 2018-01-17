@@ -1,0 +1,35 @@
+{
+  "name": "kanban",
+  "version": "1.0.0",
+  "description": "kanban",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:js && npm run test:html",
+    "test:html": "nu-html-checker *.html",
+    "test:js": "jshint js/*.js",
+    "init-project": "npm run init:dirs && npm run init:files && npm run init:gitignore && npm run init:npm-install",
+    "init:dirs": "mkdir -p sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "init:npm-install": "npm install",
+    "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
+    "watch:bro": "browser-sync start --server --files 'css/*.css' '*.html'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimethyltryptamin/kanban.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimethyltryptamin/kanban/issues"
+  },
+  "homepage": "https://github.com/dimethyltryptamin/kanban#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13"
+  },
+  "devDependencies": {
+    "parallelshell": "^3.0.2"
+  }
+}
