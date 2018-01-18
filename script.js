@@ -15,7 +15,6 @@ function Column(name) {
     this.name = name;
     this.$element = createColumn();
 
-    function createColumn() {
     	function createColumn() {
     	    var $column = $('<div>').addClass('column');
    			var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
@@ -36,7 +35,7 @@ function Column(name) {
     		return $column;
 		}
     }
-  }
+  
 Column.prototype = {
     addCard: function(card) {
       this.$element.children('ul').append(card.$element);
